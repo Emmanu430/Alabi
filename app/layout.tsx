@@ -36,7 +36,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${dmSans.variable} ${jetbrainsMono.variable} ${fraunces.variable} h-full antialiased`}
     >
-      <body className="md:pl-10 min-h-full flex flex-col">
+      <body className=" min-h-full flex flex-col">
         <Nav />
         {children}
         <Footer />

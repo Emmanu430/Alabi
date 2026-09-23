@@ -19,12 +19,12 @@ const item: Variants = {
 
 export default function Hero(){
     return(
-    <main className="flex flex-col md:justify-center items-center min-h-screen md:items-start  pt-30 md:pt-0">
+    <main className="md:px-10 px-6 lg:px-20 flex flex-col md:justify-center  min-h-screen   pt-30 md:pt-0">
         <motion.div
         variants={container}
         animate="visible"
         initial="hidden"
-        className="flex flex-col gap-10 text-left max-w-sm md:max-w-none">
+        className="flex flex-col gap-10 ">
             <motion.div
             variants={item}
             className="flex items-center text-teal">
@@ -33,7 +33,7 @@ export default function Hero(){
             </motion.div>
             <motion.h1
             variants={item}
-            className="font-display md:text-8xl text-5xl text-snow">Alabi.</motion.h1>
+            className="font-display md:text-8xl text-5xl text-snow">Alabi Emmanuel.</motion.h1>
             <motion.p variants={item} className="text-charcoal md:text-2xl text-lg font-semibold font-sans">
                 Computer Engineering student. Full-stack developer.
                 <br className="hidden md:block"/>
