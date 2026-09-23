@@ -19,7 +19,7 @@ const item: Variants = {
 
 export default function Hero(){
     return(
-    <main className="md:px-10 px-6 lg:px-20 flex flex-col md:justify-center  min-h-screen   pt-30 md:pt-0">
+    <main className="flex flex-col md:justify-center pt-30  md:py-40 ">
         <motion.div
         variants={container}
         animate="visible"

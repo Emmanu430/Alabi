@@ -19,7 +19,7 @@ const item: Variants = {
 
 export default function Footer() {
 return (
-    <footer className="pl-5">
+    <footer className="pl-5 pt-30 ">
         <motion.div 
         variants={container} 
         initial="hidden" 
