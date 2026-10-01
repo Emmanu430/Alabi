@@ -39,3 +39,15 @@ body {
 .cursor-blink{
   animation: blink 1s step-end infinite;
 }
+.cursor-layer {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+  .cursor-layer {
+    display: block;
+  }
+}

@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
+import SmoothScroll from "@/components/SmoothScroll";
+import "lenis/dist/lenis.css";
 import { DM_Sans, JetBrains_Mono, Fraunces } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import Cursor from "@/components/ui/Cursor";
+import ScrollProgress from "@/components/ui/ScrollProgress";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -37,8 +41,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${dmSans.variable} ${jetbrainsMono.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className=" min-h-full flex flex-col">
+        <Cursor/>
+        <ScrollProgress/>
         <Nav />
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
         <Footer />
         </body>
     </html>

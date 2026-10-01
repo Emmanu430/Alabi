@@ -37,6 +37,7 @@ export default function CodeEditor() {
             </div>
         
             <textarea
+            data-lenis-prevent
             aria-label="Code editor"
             className="bg-surface text-snow w-full pl-4 py-2 font-mono text-sm leading-6 resize-none focus:outline-none"
             value={code}
