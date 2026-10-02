@@ -1,14 +1,15 @@
 import Hero from "@/components/sections/Hero";
-import About from "@/components/sections/About";
-import Work from "@/components/sections/Work";
 import Playground from "@/components/sections/Playground";
-export default function Home(){
-  return(
-    <main className="  bg-black w-full text-snow  md:px-10 px-6 lg:px-15 min-h-screen ">
+import Work from "@/components/sections/Work";
+import About from "@/components/sections/About";
+
+export default function Home() {
+  return (
+    <main className="px-6 md:px-10 lg:px-15">
       <Hero />
       <Playground />
       <Work />
       <About />
     </main>
-  )
+  );
 }
