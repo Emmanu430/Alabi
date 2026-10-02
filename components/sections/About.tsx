@@ -10,11 +10,16 @@
     "Next.js",
     "Tailwind CSS",
     "Laravel",
+    "PHP",
     "PostgreSQL",
     "MySQL",
-    "Nodemailer",
-    "Resend API",
-    ];
+    "Prisma",
+    "REST APIs",
+    "Git",
+    "GitHub",
+    "Auth.js",
+    "Laravel Sanctum",
+];
 
     // The parent staggers its children; each row only describes hidden -> visible.
     const list: Variants = {
