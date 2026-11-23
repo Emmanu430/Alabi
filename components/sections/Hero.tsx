@@ -1,7 +1,7 @@
     "use client";
 
     import { motion, type Variants } from "motion/react";
-    import { Sparkle, Minus } from "lucide-react";
+    import { Sparkle, Minus, Download, MoveUpRight } from "lucide-react";
 
     const container: Variants = {
     hidden: {},
@@ -32,9 +32,18 @@
             <p className="font-mono text-sm md:text-lg">AVAILABLE FOR WORK</p>
             </motion.div>
 
-            <motion.h1 variants={item} className="font-display text-5xl md:text-8xl text-snow">
-            Alabi Emmanuel.
-            </motion.h1>
+            <motion.div variants={item} className="flex items-center gap-5">
+            {/* Initials badge, used in place of a photo */}
+            <div
+                aria-hidden="true"
+                className="flex h-14 w-14 md:h-20 md:w-20 shrink-0 items-center justify-center rounded-full border border-teal font-display text-xl md:text-3xl text-teal"
+            >
+                AE
+            </div>
+            <h1 className="font-display text-5xl md:text-8xl text-snow">
+                Alabi Emmanuel.
+            </h1>
+            </motion.div>
 
             <motion.p
             variants={item}
@@ -44,6 +53,30 @@
             <br className="hidden md:block" />
             I build tools people actually use.
             </motion.p>
+
+            <motion.div variants={item} className="flex flex-wrap gap-4">
+            <a
+                href="#projects"
+                className="inline-flex items-center gap-1 bg-teal px-5 py-2.5 text-sm md:text-base font-semibold text-black transition-opacity duration-300 hover:opacity-85"
+            >
+                View projects
+                <MoveUpRight className="h-4 w-4" />
+            </a>
+            <a
+                href="#contact"
+                className="inline-flex items-center border border-edges px-5 py-2.5 text-sm md:text-base text-charcoal transition-colors duration-300 hover:text-snow"
+            >
+                Contact me
+            </a>
+            <a
+                href="/resume.pdf"
+                download
+                className="inline-flex items-center gap-2 border border-edges px-5 py-2.5 text-sm md:text-base text-charcoal transition-colors duration-300 hover:text-snow"
+            >
+                <Download className="h-4 w-4" />
+                Resume
+            </a>
+            </motion.div>
 
             {/* Outer div runs the entrance. The link inside runs the bounce.
                 Keeping them separate stops the CSS bounce from overriding the fade-up. */}

@@ -3,26 +3,28 @@
     import { motion, type Variants } from "motion/react";
 
     // Data that never changes lives outside the component.
-    const skills = [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Tailwind CSS",
-    "Laravel",
-    "PHP",
-    "PostgreSQL",
-    "MySQL",
-    "Prisma",
-    "REST APIs",
-    "Git",
-    "GitHub",
-    "Auth.js",
-    "Laravel Sanctum",
-    "PWA",
-    "Service Workers",
-    "IndexedDB",
-];
+    const skillGroups = [
+    {
+        label: "Frontend",
+        items: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS"],
+    },
+    {
+        label: "Backend",
+        items: ["Laravel", "Laravel Sanctum", "Auth.js", "PHP", "REST APIs", "Supabase"],
+    },
+    {
+        label: "Data",
+        items: ["PostgreSQL", "MySQL", "Prisma", "Row Level Security", "IndexedDB"],
+    },
+    {
+        label: "Offline & PWA",
+        items: ["PWA", "Service Workers"],
+    },
+    {
+        label: "Tools",
+        items: ["Git", "GitHub"],
+    },
+    ];
 
     // The parent staggers its children; each row only describes hidden -> visible.
     const list: Variants = {
@@ -75,32 +77,36 @@
             </div>
             </div>
 
-            <div>
-            <p className="pb-4 uppercase flex gap-1 text-xs font-semibold text-charcoal">
-                Skills
-            </p>
-            <motion.ul
-                variants={list}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
-            >
-                {skills.map((skill) => (
-                <motion.li
-                    key={skill}
-                    variants={row}
-                    className="group border-edges border-b py-2"
+            <div className="space-y-6">
+            <p className="uppercase flex gap-1 text-xs font-semibold text-charcoal">Skills</p>
+
+            {skillGroups.map((group) => (
+                <div key={group.label}>
+                <h3 className="pb-2 text-sm font-semibold text-charcoal/70">{group.label}</h3>
+                <motion.ul
+                    variants={list}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
                 >
-                    <span
-                    aria-hidden="true"
-                    className="inline-block text-teal transition-transform duration-300 group-hover:translate-x-1"
+                    {group.items.map((skill) => (
+                    <motion.li
+                        key={skill}
+                        variants={row}
+                        className="group border-edges border-b py-2"
                     >
-                    &mdash;
-                    </span>{" "}
-                    {skill}
-                </motion.li>
-                ))}
-            </motion.ul>
+                        <span
+                        aria-hidden="true"
+                        className="inline-block text-teal transition-transform duration-300 group-hover:translate-x-1"
+                        >
+                        &mdash;
+                        </span>{" "}
+                        {skill}
+                    </motion.li>
+                    ))}
+                </motion.ul>
+                </div>
+            ))}
             </div>
         </div>
         </section>

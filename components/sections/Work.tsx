@@ -8,6 +8,20 @@
     // Data that never changes lives outside the component,
     // so it isn't rebuilt on every render.
     const works = [
+            {
+        featured: true,
+        image: "/images/habit-tracker.png",
+        name: "Habit Tracker",
+        year: "2026",
+        stack: "Full-stack",
+        person: "Solo",
+        about:
+        "An offline-first habit tracker installable as a PWA. Users add habits, check them off daily, and see streaks. Changes save to the device first and sync to Supabase when the connection returns. Supabase Auth and Row Level Security keep each user's data private.",
+        learned: "Making an app work offline by queuing changes locally and syncing them to a server later.",
+        projectStacks: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "IndexedDB"],
+        liveSite: "https://habit-tracker-red-tau-61.vercel.app",
+        repo: "https://github.com/Emmanu430/habit-tracker",
+    },
     {
         image: "/images/nexastudy.png",
         name: "NexaStudy",
@@ -16,6 +30,7 @@
         person: "Solo",
         about:
         "An AI-powered study platform that transforms raw lecture notes and PDFs into structured flashcard decks, concept maps, and adaptive quizzes. Students set a target exam date and NexaStudy schedules spaced-repetition sessions automatically.",
+        learned: "Turning raw PDFs into structured data and scheduling reviews with spaced repetition.",
         projectStacks: ["React", "Laravel", "MySQL", "Tailwind CSS"],
         liveSite: "https://nexastudy-ashen.vercel.app",
         repo: "https://github.com/Emmanu430/Nexastudy",
@@ -28,6 +43,7 @@
         person: "Solo",
         about:
         "A full-stack personal library and lending management system that lets users catalog their physical book collection, track who's borrowed what, and manage due dates, overdue fines, and reservation waitlists, with role-based access for patrons, librarians, and admins.",
+        learned: "Designing role-based access for patrons, librarians, and admins, and handling overdue logic.",
         projectStacks: ["TypeScript", "Next.js", "PostgreSQL", "Tailwind CSS", "Resend API"],
         liveSite: "https://athenaeum-drab.vercel.app",
         repo: "https://github.com/Emmanu430/library-tracker",
@@ -40,6 +56,7 @@
         person: "Solo",
         about:
         "SAINT is a full-stack e-commerce site for a streetwear brand, built from scratch — product catalog, cart, authentication, and a WhatsApp-based checkout flow tailored to how the founder actually wanted to sell. Includes a full password-reset flow with email delivery and a custom editorial lookbook gallery with lightbox viewing.",
+        learned: "Building a full checkout flow and a password-reset system with email delivery from scratch.",
         projectStacks: ["Next.js", "PostgreSQL", "Nodemailer", "Tailwind CSS"],
         liveSite: "https://saint-store-kappa.vercel.app/",
         repo: "https://github.com/Emmanu430/saint-store",
@@ -52,22 +69,12 @@
         person: "Solo",
         about:
         "A School Management Portal with role-based dashboards for Admins, Teachers, and Students. Admins manage students, teachers, and classes; teachers record grades and attendance for their assigned class; students view their own grades, attendance, and class info. Includes authentication with password reset, account linking, and file uploads for student profile photos.",
+        learned: "Structuring role-based dashboards and securing file uploads for student profiles.",
         projectStacks: ["Next.js", "PostgreSQL", "Resend API", "UploadThing", "Tailwind CSS", "shadcn/ui"],
         liveSite: "https://school-portal-xi-two.vercel.app/",
         repo: "https://github.com/Emmanu430/school-portal",
     },
-    {
-        image: "/images/habit-tracker.png",
-        name: "Habit Tracker",
-        year: "2026",
-        stack: "Full-stack",
-        person: "Solo",
-        about:
-        "An offline-first habit tracker installable as a PWA. Users add habits, check them off daily, and see streaks. Changes save to the device first and sync to Supabase when the connection returns. Supabase Auth and Row Level Security keep each user's data private.",
-        projectStacks: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "IndexedDB"],
-        liveSite: "https://habit-tracker-red-tau-61.vercel.app/login",
-        repo: "https://github.com/Emmanu430/habit-tracker",
-    },
+
     ];
 
     // Image curtain: starts cropped from the bottom, ends fully visible.
@@ -181,12 +188,20 @@
                 <motion.p variants={textItem} className="text-snow text-2xl md:text-4xl">
                     {work.name}
                     <span className="text-xs text-charcoal pl-2">{work.year}</span>
+                    {work.featured && (
+                    <span className="ml-3 align-middle rounded-full border border-teal px-2 py-0.5 text-xs text-teal">
+                        Featured
+                    </span>
+                    )}
                 </motion.p>
                 <motion.p variants={textItem} className="text-teal text-sm">
                     {work.stack} &bull; {work.person}
                 </motion.p>
                 <motion.p variants={textItem} className="pt-5 text-charcoal text-base">
                     {work.about}
+                </motion.p>
+                <motion.p variants={textItem} className="pt-4 text-sm text-snow">
+                    <span className="text-teal">What I learned:</span> {work.learned}
                 </motion.p>
 
                 <motion.div variants={textItem} className="flex flex-wrap gap-2 pt-7">
