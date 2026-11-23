@@ -56,6 +56,18 @@
         liveSite: "https://school-portal-xi-two.vercel.app/",
         repo: "https://github.com/Emmanu430/school-portal",
     },
+    {
+        image: "/images/habit-tracker.png",
+        name: "Habit Tracker",
+        year: "2026",
+        stack: "Full-stack",
+        person: "Solo",
+        about:
+        "An offline-first habit tracker installable as a PWA. Users add habits, check them off daily, and see streaks. Changes save to the device first and sync to Supabase when the connection returns. Supabase Auth and Row Level Security keep each user's data private.",
+        projectStacks: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "IndexedDB"],
+        liveSite: "https://habit-tracker-red-tau-61.vercel.app/login",
+        repo: "https://github.com/Emmanu430/habit-tracker",
+    },
     ];
 
     // Image curtain: starts cropped from the bottom, ends fully visible.

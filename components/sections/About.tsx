@@ -19,6 +19,9 @@
     "GitHub",
     "Auth.js",
     "Laravel Sanctum",
+    "PWA",
+    "Service Workers",
+    "IndexedDB",
 ];
 
     // The parent staggers its children; each row only describes hidden -> visible.
